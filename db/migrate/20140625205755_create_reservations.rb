@@ -5,7 +5,7 @@ class CreateReservations < ActiveRecord::Migration
       t.integer :people
       t.string :status
       t.belongs_to :customer
-      t.belongs_to :restaraunt
+      t.belongs_to :restaurant
 
       t.timestamps
     end
