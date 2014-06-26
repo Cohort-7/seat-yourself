@@ -5,9 +5,9 @@ class CustomersController < ApplicationController
   end
 
   def create
-  	@customer = Customer.new(params[:id])
+  	@customer = Customer.new(customer_params)
   	if @customer.save
-  		redirect_to root_path, :notice => "Signed Up"
+  		redirect_to customer_path, :notice => "Signed Up"
   	else
   		render :new
   	end
@@ -19,8 +19,8 @@ class CustomersController < ApplicationController
 
   def update
   	@customer = Customer.find(params[:id])
-  	@customer.update.attributes(customer_params)
-  	redirect_to root_path, :notice => "Profile Updated"
+  	@customer.update_attributes(customer_params)
+  	redirect_to customer_path, :notice => "Profile Updated"
   end
 
   def show 
@@ -29,7 +29,7 @@ class CustomersController < ApplicationController
 
   private
 
-  def product_params
+  def customer_params
   	params.require(:customer).permit(:name, :email, :password, :password_confirmation)
   end
 
