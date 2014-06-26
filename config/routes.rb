@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'categories#index'
 
-  resources :categories, only: [:new, :create]
+  resources :categories, only: [:new, :show, :create]
   resources :restaurants
   resources :customers
    # :only => [:new, :create, :edit]
