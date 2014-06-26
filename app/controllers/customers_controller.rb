@@ -23,9 +23,9 @@ class CustomersController < ApplicationController
   	redirect_to root_path, :notice => "Profile Updated"
   end
 
-  # def show 
-  # 	@customer = Customer.find(params[:id])
-  # end
+  def show 
+  	@customer = Customer.find(params[:id])
+  end
 
   private
 
