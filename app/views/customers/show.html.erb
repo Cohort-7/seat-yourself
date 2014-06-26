@@ -3,3 +3,17 @@
 <%= link_to 'Back', customer_path %>
 
 <h1> Welcome </h1>
+
+<p> Total Reservations <%= @customer.reservations.count %></p><br>
+<!-- <p> <%= @customer.restaurants %> </p> -->
+
+
+
+<p> Current Reservations <%= @current_reservations.count %></p><br>
+<% @current_reservations.each do |reservation| %>
+	<%= reservation.restaurant %>
+<% end %>
+<p> Past Reservations <%= @past_reservations.count %></p><br>
+
+
+

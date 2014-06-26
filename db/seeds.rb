@@ -7,3 +7,6 @@ Category.create(name: "Pizza")
 Category.create(name: "Indian")
 Category.create(name: "Japanese")
 Category.create(name: "Thai")
+
+
+

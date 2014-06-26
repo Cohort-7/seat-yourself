@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140625212045) do
     t.string   "menu_link"
     t.string   "email"
     t.string   "password_digest"
+    t.integer  "capacity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140625212045) do
     t.text     "comment"
     t.integer  "rating"
     t.integer  "customer_id"
-    t.integer  "restaraunt_id"
+    t.integer  "restaurant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

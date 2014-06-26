@@ -9,6 +9,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :menu_link
       t.string :email
       t.string :password_digest
+      t.integer :capacity
 
       t.timestamps
     end

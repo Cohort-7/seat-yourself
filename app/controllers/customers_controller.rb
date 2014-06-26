@@ -1,5 +1,7 @@
 class CustomersController < ApplicationController
 
+  #all actions are routes to root_path for testing. Will change these later.
+
   def new
   	@customer = Customer.new
   end
@@ -7,7 +9,7 @@ class CustomersController < ApplicationController
   def create
   	@customer = Customer.new(customer_params)
   	if @customer.save
-  		redirect_to customer_path, :notice => "Signed Up"
+  		redirect_to customer_path(@customer.id), :notice => "Signed Up"
   	else
   		render :new
   	end
@@ -20,12 +22,26 @@ class CustomersController < ApplicationController
   def update
   	@customer = Customer.find(params[:id])
   	@customer.update_attributes(customer_params)
-  	redirect_to customer_path, :notice => "Profile Updated"
+  	redirect_to root_path, :notice => "Profile Updated"
   end
 
   def show 
   	@customer = Customer.find(params[:id])
-    if current_customer
+    @current_reservations = @customer.reservations.where("time > ?", Time.now)
+    @past_reservations = @customer.reservations.where("time < ?", Time.now)
+    # if current_customer
+    #   @customer.reservations.count
+    #   @customer.reservations.where("time > ?", Time.now).count
+    #   @customer.reservation.where("time < ?", Time.now).count
+    # else
+    #   render "new"
+    # end
+  end
+
+  def destroy
+    @customer = Customer.reservation.find(params[:id])
+    @customer.reservation.destroy
+    redirect_to customer_path, :notice => "Reservation Deleted!"
   end
 
 

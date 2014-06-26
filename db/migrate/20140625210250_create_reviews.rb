@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       t.text :comment
       t.integer :rating
       t.belongs_to :customer
-      t.belongs_to :restaraunt
+      t.belongs_to :restaurant
 
       t.timestamps
     end
