@@ -46,6 +46,11 @@
     <%= f.text_field :menu_link %>
   </div>
 
+  <div class="category-radios">
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :category_name) %>
+
+  </div>
+
   <div class="button">
     <%= f.submit %>
   </div>

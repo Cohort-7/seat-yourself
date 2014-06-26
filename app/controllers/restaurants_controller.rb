@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
+    # @categories = Category.all
     if @restaurant.save
       redirect_to restaurants_path, notice: "Your restaurant was created successfully!"
     else
@@ -19,6 +19,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def edit
@@ -33,6 +34,6 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :email, :password, :password_confirmation, :open_time, :close_time, :menu_link, :phone_number, :address)
+    params.require(:restaurant).permit(:name, :email, :password, :password_confirmation, :open_time, :close_time, :menu_link, :phone_number, :address, :category_ids => [])
   end
 end
