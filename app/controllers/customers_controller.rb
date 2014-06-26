@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
 
   def new
-  	@customers = Customer.new
+  	@customer = Customer.new
   end
 
   def create
@@ -25,6 +25,12 @@ class CustomersController < ApplicationController
 
   def show 
   	@customer = Customer.find(params[:id])
+  end
+
+  private
+
+  def product_params
+  	params.require(:customer).permit(:name, :email, :password, :password_confirmation)
   end
 
 end
