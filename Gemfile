@@ -29,6 +29,13 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+group :development do
+	gem 'meta_request'			# for rails panel chrome ext
+	gem 'better_errors'			# better browser errors
+	gem 'binding_of_caller'	# add-on for better errors
+	gem 'pry'								# gem for debugging
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
