@@ -7,3 +7,7 @@ Category.create(name: "Pizza")
 Category.create(name: "Indian")
 Category.create(name: "Japanese")
 Category.create(name: "Thai")
+
+Restaurant.create(name:"Mi Italiano", address: "270 Wellington St. West", phone_number:"6164900372", open_time:, close_time:, menu_link:"", email:"")
+Restaurant.create(name:"", address: "", phone_number:"", open_time:, close_time:, menu_link:"", email:"")
+Restaurant.create(name:"", address: "", phone_number:"", open_time:, close_time:, menu_link:"", email:"")
