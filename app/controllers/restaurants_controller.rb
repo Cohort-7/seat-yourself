@@ -4,10 +4,18 @@ class RestaurantsController < ApplicationController
   end
 
   def new
-
+    @restaurant = Restaurant.new
   end
 
   def create
+    @restaurant = Restaurant.new
+
+    if @restaurant.save
+      redirect_to restaurants_path, notice: "Your restaurant was created successfully!"
+    else
+      render :new
+      flash.now[:alert] = "Your restaurant was not created!"
+    end
   end
 
   def show
