@@ -25,7 +25,10 @@ class CustomersController < ApplicationController
 
   def show 
   	@customer = Customer.find(params[:id])
+    if current_customer
   end
+
+
 
   private
 
