@@ -1,5 +1,5 @@
 <h1>Create a Restaurant</h1>
-<%= form_for :restaurant do |f| %>
+<%= form_for @restaurant do |f| %>
 
   <div class="field">
     <%= f.label :name %><br>
@@ -45,5 +45,10 @@
     <%= f.label :menu_link %><br>
     <%= f.text_field :menu_link %>
   </div>
+
+  <div class="button">
+    <%= f.submit %>
+  </div>
+
 <% end %>
 

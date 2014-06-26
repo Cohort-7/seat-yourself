@@ -8,7 +8,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new
+    @restaurant = Restaurant.new(restaurant_params)
 
     if @restaurant.save
       redirect_to restaurants_path, notice: "Your restaurant was created successfully!"
@@ -28,5 +28,11 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :email, :password, :password_confirmation, :open_time, :close_time, :menu_link, :phone_number, :address)
   end
 end
