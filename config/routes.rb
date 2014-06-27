@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   root 'categories#index'
 
   resources :categories, only: [:new, :show, :create]
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews, :only => [:show, :create, :destroy]
+  end
   resources :customers
    # :only => [:new, :create, :edit]
-  resources :reviews, :only => [:show, :create, :destroy]
+  #resources :reviews, :only => [:show, :create, :destroy]
   resources :sessions, :only => [:new, :create, :destroy]
 end
 
