@@ -16,11 +16,11 @@ Customer.create(name: "ttt", email:"nnn", password_digest:"fre")
 Customer.create(name: "yyy", email:"hhe", password_digest:"ffg")
 
 
-Restaurant.create(name: "Burito Boys", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, email: "burrito@boys.com", password_digest: "burritos4ever",capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [2] )
-Restaurant.create(name: "Mi Italiano", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, email: "imitalian@hotmail.com", password_digest: "buccadibeppo", capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [1] )
-Restaurant.create(name: "La Cantina y Chinese", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, email: "sombreoros@hotmail.com", password_digest: "fishtacosnorangechicken", capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [8, 2])
-Restaurant.create(name: "French-Pad-Thai", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, email: "bonjour@bonjour.com", password_digest: "frenchbread", capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [4, 9])
-Restaurant.create(name: "American South Texas BBQ Grill", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, email: "ihearttex@tx.gov", password_digest: "bbqing", capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [5, 6, 2])
+Restaurant.create(name: "Burito Boys", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [2] )
+Restaurant.create(name: "Mi Italiano", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [1] )
+Restaurant.create(name: "La Cantina y Chinese", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [8, 2])
+Restaurant.create(name: "French-Pad-Thai", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [4, 9])
+Restaurant.create(name: "American South Texas BBQ Grill", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [5, 6, 2])
 
 
 
