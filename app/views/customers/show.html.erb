@@ -1,6 +1,6 @@
 
 
-<%= link_to 'Back', customer_path %>
+
 
 <h1> Welcome </h1>
 
@@ -11,9 +11,20 @@
 
 <p> Current Reservations <%= @current_reservations.count %></p><br>
 <% @current_reservations.each do |reservation| %>
-	<%= reservation.restaurant %>
+	Name: <%= reservation.restaurant.name %> 
+	<% if reservation.status == "reserved" %>
+	<!-- change the delete/cancel to change the status. it should not delete. It should just cancel the booking -->
+	<%= link_to "Cancel", @reservation, data: {:confirm => "Are you sure you want to cancel the reservation?"}, :method => :delete %><br>
+	<%end%>
+	Status: <%= reservation.status %><br><br>
 <% end %>
+
 <p> Past Reservations <%= @past_reservations.count %></p><br>
+
+<% @current_reservations.each do |reservation| %>
+	Name: <%= reservation.restaurant.name %><br>
+	Status: <%= reservation.status %><br><br>
+<% end %>
 
 
 
