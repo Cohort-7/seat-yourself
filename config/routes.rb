@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'reviews/new'
+
+  get 'reviews/create'
+
+  get 'reviews/destroy'
+
   root 'categories#index'
 
   resources :categories, only: [:new, :show, :create]
   resources :restaurants do
-    resources :reviews, :only => [:show, :create, :destroy]
+    resources :reviews, :only => [:new, :create, :destroy]
   end
   resources :customers
    # :only => [:new, :create, :edit]
