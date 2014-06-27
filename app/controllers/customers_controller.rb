@@ -26,16 +26,14 @@ class CustomersController < ApplicationController
   end
 
   def show 
-  	@customer = Customer.find(params[:id])
+  	
+    # when we do this line, we are asking for the customer corresponding to the :id
+    # /customers/:id
+    
+    @customer = Customer.find(params[:id])
+
     @current_reservations = @customer.reservations.where("time > ?", Time.now)
     @past_reservations = @customer.reservations.where("time < ?", Time.now)
-    # if current_customer
-    #   @customer.reservations.count
-    #   @customer.reservations.where("time > ?", Time.now).count
-    #   @customer.reservation.where("time < ?", Time.now).count
-    # else
-    #   render "new"
-    # end
   end
 
   def destroy
