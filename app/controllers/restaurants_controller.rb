@@ -5,14 +5,11 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
-    @review = Review.new
   end
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @review = Review.new(review_params)
 
-    @restaurant.reviews << @review.id
     if @restaurant.save
       redirect_to restaurants_path, notice: "Your restaurant was created successfully!"
     else
@@ -23,6 +20,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
   end
 
   def edit
