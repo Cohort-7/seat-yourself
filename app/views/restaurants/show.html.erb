@@ -4,12 +4,12 @@
   <p>Phone Number: <%= @restaurant.phone_number %></p>
   <p>Address:<%= @restaurant.address %></p>
   <p>Hours: <%= @restaurant.open_time %> - <%= @restaurant.close_time %></p>
-  <p><%= link_to "Menu", '#' %></p>
   <ul>
     <% @restaurant.categories.each do |category| %>
       <li><%= category.name %></li>
     <% end %>
   </ul>
+  <p><%= link_to "Menu", '#' %></p>
 </div>
 <hr>
 <%= form_for [@restaurant, @review] do |f| %>
@@ -31,5 +31,15 @@
   <%= f.radio_button :rating, 4 %>
   <%= f.radio_button :rating, 5 %>
 </div>
-
+<hr>
+<% if @restaurant.reviews.empty? %>
+<p>This restaurant does not have any reviews currently...</p>
+<% else %>
+    <% @restaurant.reviews.each do |review| %>
+      <%= review.title %>
+      <%= review.comment %>
+      <%= review.rating %>
+    <% end %>
+  <hr>
+  <% end %>
 <% end %>
