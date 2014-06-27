@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627001744) do
+ActiveRecord::Schema.define(version: 20140627005650) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140627001744) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "capacity"
   end
 
   create_table "reviews", force: true do |t|

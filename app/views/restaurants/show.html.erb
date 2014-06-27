@@ -1,9 +1,9 @@
 <%= image_tag 'http://placehold.it/200x200' %>
 <h1><%= @restaurant.name %></h1>
 <div>
-  <p><%= @restaurant.phone_number %></p>
-  <p><%= @restaurant.address %></p>
-  <p><%= @restaurant.open_time %> - <%= @restaurant.close_time %></p>
+  <p>Phone Number: <%= @restaurant.phone_number %></p>
+  <p>Address:<%= @restaurant.address %></p>
+  <p>Hours<%= @restaurant.open_time %> - <%= @restaurant.close_time %></p>
   <p><%= link_to "Menu", '#' %></p>
   <ul>
     <% @restaurant.categories.each do |category| %>

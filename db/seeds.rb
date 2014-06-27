@@ -16,11 +16,11 @@ Customer.create(name: "ttt", email:"nnn", password_digest:"fre")
 Customer.create(name: "yyy", email:"hhe", password_digest:"ffg")
 
 
-Restaurant.create(name: "Burito Boys")
-Restaurant.create(name: "he")
-Restaurant.create(name: "hllo")
-Restaurant.create(name: "ello")
-Restaurant.create(name: "helo")
+Restaurant.create(name: "Burito Boys", address: "270 Wellington St. West", open_time: Time.now -9.hours, close_time: Time.now + 2.hours, email: burrito@boys.com, capacity: 100, )
+Restaurant.create(name: "Mi Italiano")
+Restaurant.create(name: "La Cantina y Chinese")
+Restaurant.create(name: "French-Pad-Thai")
+Restaurant.create(name: "American South Texas BBQ Grill")
 
 
 
