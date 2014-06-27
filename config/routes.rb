@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :reviews, :only => [:new, :create, :destroy]
   end
+  resources :reservations, :only => [:new, :show, :create, :update]
   resources :customers
    # :only => [:new, :create, :edit]
   #resources :reviews, :only => [:show, :create, :destroy]
