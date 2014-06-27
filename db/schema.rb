@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625212045) do
+ActiveRecord::Schema.define(version: 20140627001744) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -46,12 +46,11 @@ ActiveRecord::Schema.define(version: 20140625212045) do
     t.string   "name"
     t.string   "address"
     t.integer  "phone_number"
-    t.datetime "open_time"
-    t.datetime "close_time"
+    t.time     "open_time"
+    t.time     "close_time"
     t.string   "menu_link"
     t.string   "email"
     t.string   "password_digest"
-    t.integer  "capacity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,7 +60,7 @@ ActiveRecord::Schema.define(version: 20140625212045) do
     t.text     "comment"
     t.integer  "rating"
     t.integer  "customer_id"
-    t.integer  "restaurant_id"
+    t.integer  "restaraunt_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
