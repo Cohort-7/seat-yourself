@@ -12,6 +12,13 @@
   </ul>
   <p><%= link_to "Menu", '#' %></p>
 </div>
+<!-- Form for reservations -->
+<hr>
+<%= form_for @reservation do |f| %>
+    <%= f.date_field :time, min: Time.zone.today, value: Time.zone.today %>
+    <%= f.time_select :time, value: Time.now, ampm: true, minmute_step: 60  %>
+<% end %>
+<!-- Form for reviews -->
 <hr>
 <%= form_for [@restaurant, @review] do |f| %>
 <div>
@@ -32,6 +39,11 @@
   <%= f.radio_button :rating, 4 %>
   <%= f.radio_button :rating, 5 %>
 </div>
+
+<div>
+  <%= f.submit %>
+</div>
+
 <hr>
 <% if @restaurant.reviews.empty? %>
 <p>This restaurant does not have any reviews currently...</p>
