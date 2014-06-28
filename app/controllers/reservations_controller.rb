@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(parse_new_time_object(reservation_params))
-    @reservation.restaurant_id = @restaurant.id
+    #@reservation.restaurant_id = @restaurant.id
     # @reservation.customer_id = current_customer.id
 
     if @reservation.save
