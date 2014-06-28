@@ -16,5 +16,6 @@
 //= require_tree .
 
 $( document ).ready(function() {
+		categories_show();
     categories_list();
 });
