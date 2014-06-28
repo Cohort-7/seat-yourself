@@ -15,8 +15,10 @@
 <!-- Form for reservations -->
 <hr>
 <%= form_for @reservation do |f| %>
-    <%= f.date_field :time, min: Time.zone.today, value: Time.zone.today %>
-    <%= f.time_select :time, value: Time.now, ampm: true, minmute_step: 60  %>
+  <%= f.date_field :time, min: Time.zone.today, value: Time.zone.today %>
+  <%= f.time_select :time, value: Time.now, ampm: true,  discard_minute: true %>
+  <%= f.select :people, (1..@restaurant.capacity.to_i).collect { |num| num } %>
+  <%= f.submit %>
 <% end %>
 <!-- Form for reviews -->
 <hr>
