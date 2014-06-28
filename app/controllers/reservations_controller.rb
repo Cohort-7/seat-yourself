@@ -6,7 +6,15 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.new()
+    @reservation = Reservation.new(parse_new_time_object(reservation_params))
+    # @reservation.customer_id = current_customer.id
+
+    if @reservation.save
+      redirect_to restaurants_path  , notice: "Your reservation was created!"
+    else
+      render @restaurant
+      flash.now[:alert] = "Your table was not reserved..."
+    end
   end
 
   def update
@@ -26,8 +34,8 @@ class ReservationsController < ApplicationController
       params[:time][8..9].to_i,
       params["time(4i)"].to_i
       ),
-      params[:people]
-    }
+      people: params[:people] }
+    new_params
   end
 end
 
