@@ -34,6 +34,7 @@ class CustomersController < ApplicationController
 
     @current_reservations = @customer.reservations.where("time > ?", Time.now)
     @past_reservations = @customer.reservations.where("time < ?", Time.now)
+    @current_restaurant_listed = @customer.restaurants #needs something to go here for eg: @customer.restaurants.owned
   end
 
   def destroy

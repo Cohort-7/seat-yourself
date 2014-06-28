@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
 <nav data-uk-sticky class="nav-top uk-width-1 uk-navbar uk-navbar-attached uk-vertical-align-middle">
   <div class="uk-container uk-container-center">
     <%= link_to "Seat Yourself", root_path, class: "uk-navbar-brand" %>
@@ -21,6 +20,9 @@
     </div>
   </div>
 </nav>
+
+  <%= flash[:alert] %>
+  <%= flash[:notice] %>
 
 <div class="uk-container uk-container-center">
   <div class="uk-width" style="margin-top:10px;">
