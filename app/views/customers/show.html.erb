@@ -4,10 +4,15 @@
 
 <h1> Welcome </h1>
 
-<p> Total Reservations <%= @customer.reservations.count %></p><br>
-<!-- <p> <%= @customer.restaurants %> </p> -->
+
+		<% if current_customer && current_customer == @customer %>
+
+			<%= link_to "Log Out", root_path %>
 
 
+		<p> Total Restaurants Listed <%= @customer.restaurants.count %></p><br>
+
+		<p> Total Reservations <%= @customer.reservations.count %></p><br>
 
 <p> Current Reservations <%= @current_reservations.count %></p><br>
 <% @current_reservations.each do |reservation| %>
@@ -25,6 +30,14 @@
 	Name: <%= reservation.restaurant.name %><br>
 	Status: <%= reservation.status %><br><br>
 <% end %>
+
+		<% end %>
+
+
+		
+
+
+
 
 
 
