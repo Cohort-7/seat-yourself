@@ -2,17 +2,21 @@
 	<h2><%= @category.name %> restaurants</h2>
 </div>
 
-<% @category.restaurants.each do |restaurant| %>
-	<!-- <a> -->
-	<div class="uk-panel uk-panel-box">
-		<h3 class="uk-panel-title uk-text-center"><%= restaurant.name %></h3>
-		<p class="uk-clearfix">
-			<%= image_tag("food_categories/#{@category.name.downcase}.jpg", alt: @category.name, class: "uk-align-left", style: "width:20%") %>
-			<%= restaurant.inspect %>
-			<br>
-			<a class="uk-align-right uk-button uk-button-primary uk-button-large" href="<%= restaurant_path(restaurant) %>">I'm fucking hungry!</a>
-		</p>
-	</div>
-	<!-- </a> -->
-	<br>
+<% if @category.restaurants.empty? %>
+	<h3 class="uk-panel-title uk-text-center">There are no restaurants in this category..</h3>
+<% else %>
+	<% @category.restaurants.each do |restaurant| %>
+		<!-- <a> -->
+		<div class="uk-panel uk-panel-box">
+			<h3 class="uk-panel-title uk-text-center"><%= restaurant.name %></h3>
+			<p class="uk-clearfix">
+				<%= image_tag("food_categories/#{@category.name.downcase}.jpg", alt: @category.name, class: "uk-align-left", style: "width:20%") %>
+				<%= restaurant.inspect %>
+				<br>
+				<a class="uk-align-right uk-button uk-button-primary uk-button-large" href="<%= restaurant_path(restaurant) %>">I'm fucking hungry!</a>
+			</p>
+		</div>
+		<!-- </a> -->
+		<br>
+	<% end %>
 <% end %>
