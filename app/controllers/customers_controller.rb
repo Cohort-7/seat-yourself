@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
 
   #all actions are routes to root_path for testing. Will change these later.
-
+ 
   def new
   	@customer = Customer.new
   end

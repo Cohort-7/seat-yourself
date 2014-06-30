@@ -1,4 +1,11 @@
 class SessionsController < ApplicationController
+
+  #  before_action :no_login, only: [:new]
+
+  # def no_login
+  #   redirect_to root_path if current_customer
+  # end
+
   def new
   end
 
