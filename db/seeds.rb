@@ -15,12 +15,13 @@ Customer.create(name: "rrr", email:"bbb", password_digest:"fds")
 Customer.create(name: "ttt", email:"nnn", password_digest:"fre")
 Customer.create(name: "yyy", email:"hhe", password_digest:"ffg")
 
+lorem = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. "
 
-Restaurant.create(name: "Burito Boys", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [2], capacity: 20 )
-Restaurant.create(name: "Mi Italiano", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [1], capacity: 20 )
-Restaurant.create(name: "La Cantina y Chinese", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [8, 2], capacity: 20)
-Restaurant.create(name: "French-Pad-Thai", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [4, 9], capacity: 20)
-Restaurant.create(name: "American South Texas BBQ Grill", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [5, 6, 2], capacity: 20)
+Restaurant.create(name: "Burito Boys", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [2], capacity: 20, description: lorem )
+Restaurant.create(name: "Mi Italiano", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [1], capacity: 20, description: lorem )
+Restaurant.create(name: "La Cantina y Chinese", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [8, 2], capacity: 20, description: lorem)
+Restaurant.create(name: "French-Pad-Thai", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [4, 9], capacity: 20, description: lorem)
+Restaurant.create(name: "American South Texas BBQ Grill", address: "270 Wellington St. West", open_time: Time.now - 9.hours, close_time: Time.now + 2.hours, capacity: 100, phone_number: 6164900372, menu_link: "#", category_ids: [5, 6, 2], capacity: 20, description: lorem)
 
 
 
