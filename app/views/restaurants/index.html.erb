@@ -1,2 +1,8 @@
-<h1>Restaurants all page...</h1>
+<h1>Restaurants(<%= @restaurants.count %>)</h1>
+<hr>
+<% @restaurants.each do |restaurant| %>
+  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+  <p>WTF<%= restaurant.description %></p>
+  <hr>
+ <% end %>
 
