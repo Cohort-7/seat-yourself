@@ -10,11 +10,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(parse_new_time_object(reservation_params))
     @reservation.restaurant_id = params[:reservation][:restaurant_id]
     @reservation.customer_id = params[:reservation][:customer_id]
-
+    @restaurant = Restaurant.find(params[:reservation][:restaurant_id])
     if @reservation.save
-      redirect_to restaurants_path  , notice: "Your reservation was created!"
+      redirect_to @restaurant, notice: "Your reservation was created!"
     else
-      render @restaurant
+      redirect_to @restaurant
       flash.now[:alert] = "Your table was not reserved..."
     end
   end
