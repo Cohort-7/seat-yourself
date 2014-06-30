@@ -31,22 +31,22 @@
 					Name: <%= reservation.restaurant.name %> <br><br>
 
 					<% if reservation.status == "reserved" %>
-						<%= link_to "Cancel", @reservation, data: {:confirm => "Are you sure you want to 			cancel the reservation?"}, :method => :delete %><br><hr>
+						<%= link_to "Cancel", @reservation, data: {:confirm => "Are you sure you want to 			cancel the reservation?"}, :method => :delete %><br>
 					<%end%>
 					<!-- change the delete/cancel to change the status. it should not delete. It should just cancel the booking -->
 
-					Status: <%= reservation.status %><br><hr>
-					Time: <%= reservation.time.strftime("%b, %d at %I:%M%p") %><br><hr>
+					Status: <%= reservation.status %><br>
+					Time: <%= reservation.time.strftime("%b, %d at %I:%M%p") %><br>
 					People: <%= reservation.people %><br><hr>
 			<% end %>
 			<p>
 
-				<p class="hello"> Past Reservations <%= @past_reservations.count %></p><hr>
+				<p class="hello"> Past Reservations <%= @past_reservations.count %></p>
 
 				<p class="abc"><% @past_reservations.each do |reservation| %>
-							Name: <%= reservation.restaurant.name %><br><hr>
-							Status: <%= reservation.status %><br><hr>
-							Time: <%= reservation.time.strftime("%b, %d at %I:%M%p") %><br><hr>
+							Name: <%= reservation.restaurant.name %><br>
+							Status: <%= reservation.status %><br>
+							Time: <%= reservation.time.strftime("%b, %d at %I:%M%p") %><br>
 							People: <%= reservation.people %><br><hr>
 				<% end %>
 				</p>
