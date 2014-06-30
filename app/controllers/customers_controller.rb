@@ -9,7 +9,8 @@ class CustomersController < ApplicationController
   def create
   	@customer = Customer.new(customer_params)
   	if @customer.save
-  		redirect_to customer_path(@customer.id), :notice => "Signed Up"
+      session[:customer_id] = @customer.id
+  		redirect_to @customer, :notice => "Signed Up"
   	else
   		render :new
   	end
@@ -34,7 +35,7 @@ class CustomersController < ApplicationController
 
     @current_reservations = @customer.reservations.where("time > ?", Time.now)
     @past_reservations = @customer.reservations.where("time < ?", Time.now)
-    @current_restaurant_listed = @customer.restaurants #needs something to go here for eg: @customer.restaurants.owned
+    @current_restaurant_listed = @customer.owned_restaurants #needs something to go here for eg: @customer.restaurants.owned
   end
 
   def destroy

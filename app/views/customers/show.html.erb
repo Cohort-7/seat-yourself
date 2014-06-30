@@ -14,7 +14,13 @@
 
 		<p class="abc"><% @current_restaurant_listed.each do |restaurant| %>
 	Name: <%= restaurant.name %>	
+
+	<%= link_to "Cancel", @reservation, data: {:confirm => "Are you sure you want to cancel the reservation?"}, :method => :delete %><br>
+	
 	<%end%><p>
+	<!-- change the delete/cancel to change the status. it should not delete. It should just cancel the booking -->
+	
+
 
 		<p class="hello"> Total Reservations <%= @customer.reservations.count %></p><br>
 
