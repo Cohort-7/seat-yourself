@@ -9,7 +9,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(parse_new_time_object(reservation_params))
     @reservation.restaurant_id = params[:reservation][:restaurant_id]
-    # @reservation.customer_id = current_customer.id
+    @reservation.customer_id = params[:reservation][:customer_id]
 
     if @reservation.save
       redirect_to restaurants_path  , notice: "Your reservation was created!"

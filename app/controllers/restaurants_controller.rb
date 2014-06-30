@@ -21,7 +21,9 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     @review = Review.new
-    @reservation = @restaurant.reservations.build
+    if current_customer
+      @reservation = @restaurant.reservations.build(customer_id: current_customer.id)
+    end
   end
 
   def edit

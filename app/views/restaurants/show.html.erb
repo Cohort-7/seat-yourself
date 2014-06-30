@@ -12,50 +12,58 @@
   </ul>
   <p><%= link_to "Menu", '#' %></p>
 </div>
-<!-- Form for reservations -->
-<hr>
-<%= form_for @reservation do |f| %>
-  <%= f.hidden_field :restaurant_id %>
-  <%= f.date_field :time, min: Time.zone.today, value: Time.zone.today %>
-  <%= f.time_select :time, value: Time.now, ampm: true,  discard_minute: true %>
-  <%= f.select :people, (1..@restaurant.capacity.to_i).collect { |num| num } %>
-  <%= f.submit %>
-<% end %>
-<!-- Form for reviews -->
-<hr>
-<%= form_for [@restaurant, @review] do |f| %>
-<div>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</div>
 
-<div>
-  <%= f.label :comment %>
-  <%= f.text_area :comment %>
-</div>
-
-<div>
-  <%= f.label :rating %>
-  <%= f.radio_button :rating, 1 %>
-  <%= f.radio_button :rating, 2 %>
-  <%= f.radio_button :rating, 3 %>
-  <%= f.radio_button :rating, 4 %>
-  <%= f.radio_button :rating, 5 %>
-</div>
-
-<div>
-  <%= f.submit %>
-</div>
-
-<hr>
-<% if @restaurant.reviews.empty? %>
-<p>This restaurant does not have any reviews currently...</p>
-<% else %>
-    <% @restaurant.reviews.each do |review| %>
-      <%= review.title %>
-      <%= review.comment %>
-      <%= review.rating %>
-    <% end %>
+<% if current_customer %>
+  <!-- Form for reservations -->
   <hr>
+  <%= form_for @reservation do |f| %>
+    <%= f.hidden_field :restaurant_id %>
+    <%= f.hidden_field :customer_id %>
+    <%= f.date_field :time, min: Time.zone.today, value: Time.zone.today %>
+    <%= f.time_select :time, value: Time.now, ampm: true,  discard_minute: true %>
+    <%= f.select :people, (1..@restaurant.capacity.to_i).collect { |num| num } %>
+    <%= f.submit %>
   <% end %>
+  <!-- Form for reviews -->
+  <hr>
+  <%= form_for [@restaurant, @review] do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+  </div>
+
+  <div>
+    <%= f.label :rating %>
+    <%= f.radio_button :rating, 1 %>
+    <%= f.radio_button :rating, 2 %>
+    <%= f.radio_button :rating, 3 %>
+    <%= f.radio_button :rating, 4 %>
+    <%= f.radio_button :rating, 5 %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
+  <hr>
+  <% if @restaurant.reviews.empty? %>
+  <p>This restaurant does not have any reviews currently...</p>
+  <% else %>
+      <% @restaurant.reviews.each do |review| %>
+        <%= review.title %>
+        <%= review.comment %>
+        <%= review.rating %>
+      <% end %>
+    <hr>
+    <% end %>
+  <% end %>
+
+<% else %>
+  <hr>
+  <p>You should be logged in to make a reservation or write a review</p>
 <% end %>
