@@ -1,16 +1,17 @@
 <%= image_tag 'http://placehold.it/200x200' %>
 <h1><%= @restaurant.name %></h1>
 <div class="uk-panel uk-panel-header">
+  <p>Average Rating: <%= @restaurant.average_rating %></p>
   <p>Phone Number: <%= @restaurant.phone_number %></p>
   <p>Address: <%= @restaurant.address %></p>
   <p>Hours: <%= format_time(@restaurant.open_time) %> - <%= format_time(@restaurant.close_time) %></p>
-  <p>Description: <%= @restaurant.description %></p>
   <ul>
     <% @restaurant.categories.each do |category| %>
       <li><%= category.name %></li>
     <% end %>
   </ul>
   <p><%= link_to "Menu", '#' %></p>
+  <p>Description: <%= @restaurant.description %></p>
 </div>
 
 <% if current_customer %>
