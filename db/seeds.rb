@@ -30,3 +30,9 @@ Reservation.create(time: Time.now - 5.days, people:"6", status:"completed",custo
 Reservation.create(time: Time.now + 6.days, people:"3", status:"reserved", customer_id:"3", restaurant_id:"3")
 Reservation.create(time: Time.now + 1.days, people:"9", status:"reserved", customer_id:"4", restaurant_id:"4")
 Reservation.create(time: Time.now - 2.days, people:"4", status:"canceled", customer_id:"5", restaurant_id:"5")
+
+Review.create(title: "Great food!", comment: "The food was great!", rating: 5, customer_id: 1,restaurant_id: 1)
+Review.create(title: "Terrible food!", comment: "The food was terrible!", rating: 1, customer_id: 2, restaurant_id: 1)
+Review.create(title: "Ok food...", comment: "The food was ok..", rating: 3, customer_id: 3,restaurant_id: 1)
+Review.create(title: "Great food!", comment: "The food was great!", rating: 5, customer_id: 1,restaurant_id: 2)
+Review.create(title: "Great food!", comment: "The food was great!", rating: 5, customer_id: 1,restaurant_id: 3)

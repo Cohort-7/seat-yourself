@@ -1,8 +1,10 @@
 <h1>Restaurants(<%= @restaurants.count %>)</h1>
 <hr>
 <% @restaurants.each do |restaurant| %>
+  <%= image_tag 'http://placehold.it/200x200' %>
   <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
-  <p>WTF<%= restaurant.description %></p>
+  <p>Average Rating: <%= average_rating(restaurant) %></p>
+  <p><%= restaurant.description %></p>
   <hr>
  <% end %>
 
