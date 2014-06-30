@@ -15,9 +15,8 @@ class Reservation < ActiveRecord::Base
 
   def hourly_capacity(restaurant)
     capacity = []
-    reservervations = restaurant
+    reservations = restaurant
     restaurant.reviews.each {|review| capacity << review.people }
-    capacity.inject(0) {|sum, num| sum + num}
-    end
+    capacity.inject(0) { |sum, num| sum + num }
   end
 end
