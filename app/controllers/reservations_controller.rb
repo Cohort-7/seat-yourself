@@ -11,6 +11,7 @@ class ReservationsController < ApplicationController
     @reservation.restaurant_id = params[:reservation][:restaurant_id]
     @reservation.customer_id = params[:reservation][:customer_id]
     @restaurant = Restaurant.find(params[:reservation][:restaurant_id])
+    @reservation.status = "reserved"
     if @reservation.save
       redirect_to @restaurant, notice: "Your reservation was created!"
     else
@@ -20,6 +21,11 @@ class ReservationsController < ApplicationController
   end
 
   def update
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = "canceled"
+    if @reservation.save
+      redirect_to current_customer, notice: "Your reservation was canceled!"
+    end
   end
 
   private

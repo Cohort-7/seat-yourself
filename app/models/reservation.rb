@@ -2,7 +2,7 @@ class Reservation < ActiveRecord::Base
 	belongs_to :customer
 	belongs_to :restaurant
 
-  validate :reservation_availability
+  # validate :reservation_availability
 
   def reservation_availability
     restaurant.reservations.each do |current_reservation|
