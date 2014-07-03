@@ -57,11 +57,14 @@
   <p>This restaurant does not have any reviews currently...</p>
   <% else %>
       <% @restaurant.reviews.each do |review| %>
-        <%= review.title %>
-        <%= review.comment %>
-        <%= review.rating %>
+        <div>
+          <h2><%= review.title %></h2>
+          <p><%= review.comment %></p>
+          <p>Rating: <%= review.rating %></p>
+          <p>Review by <%= review.customer.name %> on <%= review.created_at %></p>
+          <hr>
+        </div>
       <% end %>
-    <hr>
     <% end %>
   <% end %>
 
