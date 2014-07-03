@@ -1,13 +1,14 @@
 class ReviewsController < ApplicationController
 
   def create
-    @review = Restaurant.reviews.build(review_params)
-    #@review.user_id = current_user.id
+    @review = Review.new(review_params)
+    @review.customer_id = current_customer.id
+    @review.restaurant_id = params[:restaurant_id]
 
     if @review.save
-      redirect_to @Restaurant, :notice => "Thanks for the review!"
+      redirect_to restaurant_path(params[:restaurant_id]), :notice => "Thanks for the review!"
     else
-      render :restaurant
+      render restaurant_path(params[:restaurant_id])
       flash.now[:alert] = "Your review was not submitted..."
     end
   end
@@ -18,6 +19,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:title, :comment, :rating)
+    params.require(:review).permit(:title, :comment, :rating, :restaurant_id)
   end
 end

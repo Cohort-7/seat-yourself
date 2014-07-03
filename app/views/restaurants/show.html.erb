@@ -28,6 +28,7 @@
   <!-- Form for reviews -->
   <hr>
   <%= form_for [@restaurant, @review] do |f| %>
+    <%= f.hidden_field :restaurant_id %>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
